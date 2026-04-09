@@ -129,6 +129,12 @@
                 align-items: center;
             }
 
+            .btn {
+
+                width: 80%;
+                text-align: center;
+            }
+
             .hero-btn a {
                 width: 80%;
             }
@@ -413,6 +419,8 @@
         /* BUTTONS */
         .buttons {
             display: flex;
+            justify-content: center;
+            gap: 20px;
             gap: 10px;
             margin-top: 50px;
         }
@@ -762,6 +770,18 @@
         .project:hover {
             box-shadow: 0 0 10px #a855f7;
         }
+
+        @media (max-width: 600px) {
+            .buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 80%;
+                text-align: center;
+            }
+        }
     </style>
 </head>
 
@@ -782,8 +802,10 @@
         <div class="hero-text">
             <h1>Coucou, je suis Charlotte</h1>
             <p>Frontend Developer & Designer</p>
-            <a href="files/cv_design_exact.pdf" class="btn btn-outline">Telecharge le CV</a>
-            <a href="contact.html" class="btn btn-outline">Contacte moi</a>
+            <div class="buttons">
+                <a href="files/cv_design_exact.pdf" class="btn btn-outline">Telecharge le CV</a>
+                <a href="contact.html" class="btn btn-outline">Contacte moi</a>
+            </div>
         </div>
         <img src="images/image0.png">
     </section>
