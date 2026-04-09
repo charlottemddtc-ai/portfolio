@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Projects</title>
-
+    <meta name="viewport" content="width=device-witdh,initial-scale=1.0 ">
     <style>
         * {
             margin: 0;
@@ -87,6 +87,12 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 25px;
+        }
+
+        @media(max-width:768px) {
+            .projects {
+                grid-template-columns: 1fr;
+            }
         }
 
         /* GLASS CARD */
@@ -210,11 +216,11 @@
             <div class="project-card">
                 <img src="images/image1 (1).jpeg">
                 <div class="project-content">
-                    <h3>Platform pour algriculteur</h3>
+                    <h3>platforme pour algriculteur</h3>
                     <p>Aide à savoir quand est ce que y'aura la pluie</p>
 
                     <div class="tech">
-                        <span>React</span>
+                        <span>CSS</span>
                         <span>HTML</span>
                     </div>
 
@@ -229,8 +235,8 @@
             <div class="project-card">
                 <img src="images/image2.jpeg">
                 <div class="project-content">
-                    <h3>Site pour un startup</h3>
-                    <p>Site personnalisé au gout du client.</p>
+                    <h3>Aplication pour un startup</h3>
+                    <p>Application personnalisé au gout du client.</p>
 
                     <div class="tech">
                         <span>React </span>

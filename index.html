@@ -17,7 +17,7 @@
 
         /* THEMES */
         :root {
-            --bg: #111;
+            --bg: #000000;
             --card: #1e293b;
             --text: #fff;
             --accent: #7c3aed;
@@ -502,7 +502,7 @@
             padding: 40px;
             border-radius: 20px;
 
-            background: rgba(255, 255, 255, 0.05);
+            background: rgb(0, 0, 0);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
 
@@ -607,6 +607,74 @@
 
         .section-divider.show {
             width: 80%;
+        }
+
+        h2 {
+            margin-bottom: 30px;
+        }
+
+        /* FORM */
+        .form {
+            max-width: 500px;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form input,
+        .form textarea,
+        .form select {
+            margin: 10px 0;
+            padding: 12px;
+            border: 1px solid #333;
+            background: #111;
+            color: white;
+            border-radius: 5px;
+        }
+
+        .form textarea {
+            height: 120px;
+            resize: none;
+        }
+
+        /* BUTTON */
+        .form button {
+            margin-top: 15px;
+            padding: 12px;
+            border: none;
+            background: linear-gradient(45deg, #00ff88, #a855f7);
+            color: black;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        /* SEARCH */
+        #search {
+            width: 60%;
+            padding: 10px;
+            margin-bottom: 20px;
+            background: #111;
+            border: 1px solid #333;
+            color: white;
+        }
+
+        /* PROJECTS */
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .project {
+            background: #111;
+            padding: 20px;
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+
+        .project:hover {
+            box-shadow: 0 0 10px #a855f7;
         }
     </style>
 </head>
@@ -777,7 +845,7 @@
     <div class="section-divider"></div>
 
     <section class="section">
-        <h2>My Projects</h2>
+        <h2>Mes Projets</h2>
         <div class="projects">
 
             <!-- CARD -->
@@ -850,40 +918,68 @@
                 </div>
             </div>
 
-            <div class="project-card">
-                <img src="images/image6 (1).jpeg">
-                <div class="project-content">
-                    <h3>Portfolio</h3>
-                    <p>Portfolio basée sur le glassmorphism.</p>
-                    <div class="tech">
-                        <span>CSS</span>
-                        <span>HTML</span>
-                    </div>
-                    <div class="buttons">
-                        <button class="btn-dark">Code non dispo</button>
-                        <button class="btn-orange">Demo</button>
-                    </div>
-                </div>
+
+
+
+
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+    <section class="section">
+        <h2>Demande de projet</h2>
+
+        <form class="form">
+            <input type="text" placeholder="Nom:" required>
+            <input type="email" placeholder=" Email:" required>
+
+            <input type="text" placeholder=" Titre de Project :" required>
+
+            <textarea placeholder="Decris ton projet (features, budget, durée...)" required></textarea>
+
+            <select required>
+                <option value=""> Type de Projet </option>
+                <option>Website</option>
+                <option>Mobile App</option>
+                <option>Backend API</option>
+            </select>
+
+            <button type="submit">Envoyer la requete</button>
+        </form>
+    </section>
+
+    <div class="section-divider"></div>
+    <!-- ===== PROJECT SEARCH ===== -->
+    <section class="section">
+        <h2>Rechercher des projets</h2>
+
+        <input type="text" id="search" placeholder="Search by keyword...">
+
+        <div class="projects">
+
+            <div class="project" data-name="portfolio website html css">
+                <h3>Requete client</h3>
+                <p>SQL & C</p>
             </div>
 
-            <div class="project-card">
-                <img src="images/image3.jpeg">
-                <div class="project-content">
-                    <h3>Design aplication</h3>
-                    <p>Creation d'une application web.</p>
-                    <div class="tech">
-                        <span>javascript</span>
-                        <span>CSS</span>
-                    </div>
-                    <div class="buttons">
-                        <button class="btn-dark">Code non dispo</button>
-                        <button class="btn-orange">Demo</button>
-                    </div>
-                </div>
+            <div class="project" data-name="todo app javascript">
+                <h3>Application pour startup</h3>
+                <p>React & Tailwind</p>
+            </div>
+
+            <div class="project" data-name="data analysis python pandas">
+                <h3>Platforme pour algriculteur</h3>
+                <p>CSS & HTML</p>
+            </div>
+
+            <div class="project" data-name="api backend express node">
+                <h3>E commerce platforme</h3>
+                <p>React & Node</p>
             </div>
 
         </div>
     </section>
+
     <div class="section-divider"></div>
 
     <section class="contact-section">
@@ -896,7 +992,7 @@
                 <input type="email" placeholder="Email">
                 <textarea placeholder="Message"></textarea>
 
-                <button type="submit">Send</button>
+                <button type="submit">envoyer</button>
             </form>
 
         </div>
@@ -911,17 +1007,23 @@
         window.addEventListener('scroll', () => {
             elements.forEach(el => {
                 const top = el.getBoundingClientRect().top;
-                if (top < window.innerHeight - 50) {
-                    el.classList.add('show');
-                }
+                if (top < window.innerHeight - 50) { el.classList.add('show'); }
             });
         });
         document.querySelectorAll('.section-divider').forEach(el => {
             const top = el.getBoundingClientRect().top;
-            if (top < window.innerHeight - 50) {
-                el.classList.add('show');
-            }
+            if (top < window.innerHeight - 50) { el.classList.add('show'); }
+        }); const
+            search = document.getElementById("search"); const projects = document.querySelectorAll(".project");
+        search.addEventListener("keyup", () => {
+            let value = search.value.toLowerCase();
+
+            projects.forEach(project => {
+                let name = project.dataset.name;
+                project.style.display = name.includes(value) ? "block" : "none";
+            });
         });
+
     </script>
 
 </body>
