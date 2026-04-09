@@ -16,6 +16,31 @@
             overflow-x: hidden;
         }
 
+        p,
+        h1,
+        h2,
+        h3,
+        span,
+        a,
+        button {
+            word-break: break-word;
+            overflow-wrap: break-word;
+        }
+
+        /* IMPORTANT pour flex (évite débordement) */
+        .about-text,
+        .project h3,
+        .checkbox p,
+        .contact-form,
+        .about-card {
+            min-width: 0;
+        }
+
+        /* About texte */
+        .about-text {
+            max-width: 100%;
+        }
+
         .container {
             width: 90%;
             max-width: 1200px;
