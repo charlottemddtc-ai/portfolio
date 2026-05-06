@@ -922,7 +922,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
             <p>Frontend Developer & Designer</p>
             <div class="buttons">
                 <a href="files/cv_design_exact.pdf" class="btn btn-outline">Telecharge le CV</a>
-                <a href="contact.html" class="btn btn-outline">Contacte moi</a>
+                <a href="contact.php" class="btn btn-outline">Contacte moi</a>
             </div>
         </div>
         <img src="images/image0 (14).jpeg">
@@ -963,7 +963,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
                     </div>
                 </div>
 
-                <a href="about.html" class="learn-btn">Apprends plus</a>
+                <a href="about.php" class="learn-btn">Apprends plus</a>
 
             </div>
 
