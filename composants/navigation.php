@@ -1,20 +1,33 @@
-  <?php $page_courante = basename($_SERVER['PHP_SELF']);
-  ?>
- <nav>
-        <h3>Portfolio.</h3>
-     
-        <div class="nav-links">
-            <a href="index.php" <?php if ($page_courante == 'index.php') echo 'class="actif"'; ?>
-            >Home</a>
-            <a href="about.php" <?php if ($page_courante == 'about.php') echo 'class="actif"'; ?>
-            >About</a>
-            <a href="projects.php"<?php if ($page_courante == 'projects.php') echo 'class="actif"'; ?>
-            >Projets</a>
-           <a href="contact.php" <?php if ($page_courante == 'contact.php') echo 'class="actif"'; ?>
-            >Contact</a>
-        </div>
-        <span class="toggle" onclick="toggleMode()">🌙</span>
-     
+<?php
+$page_courante = basename($_SERVER['PHP_SELF']);
+$liens = [
+    'index.php'    => 'Accueil',
+    'about.php'    => 'À propos',
+    'projects.php' => 'Projets',
+    'contact.php'  => 'Contact',
+];
+?>
+<header class="nav" data-nav>
+    <a class="nav__logo" href="index.php" aria-label="Charlotte — accueil">Charlotte<span>.</span></a>
+
+    <nav class="nav__liens" aria-label="Navigation principale">
+        <?php foreach ($liens as $fichier => $libelle): ?>
+            <a href="<?= $fichier ?>"<?= $page_courante === $fichier ? ' class="actif" aria-current="page"' : '' ?>><?= $libelle ?></a>
+        <?php endforeach; ?>
     </nav>
 
-    <?php ?>
+    <button class="nav__inverse" type="button" data-inverse aria-pressed="false" title="Inverser noir et blanc">
+        <span class="nav__inverse-pastille" aria-hidden="true"></span><span class="nav__inverse-texte">Inverser</span>
+    </button>
+
+    <button class="nav__menu" type="button" data-menu aria-expanded="false" aria-controls="menu-plein">Menu</button>
+</header>
+
+<div class="menu-plein" id="menu-plein" data-menu-panneau hidden>
+    <nav aria-label="Navigation mobile">
+        <?php foreach ($liens as $fichier => $libelle): ?>
+            <a href="<?= $fichier ?>"<?= $page_courante === $fichier ? ' class="actif" aria-current="page"' : '' ?>><?= $libelle ?></a>
+        <?php endforeach; ?>
+    </nav>
+    <p class="etiquette">charlottemddtc@gmail.com</p>
+</div>
