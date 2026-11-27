@@ -11,6 +11,11 @@ php -S localhost:8000
 
 Puis ouvrir http://localhost:8000 dans un navigateur.
 
+## En ligne
+
+Le site est déployé sur Vercel avec le runtime PHP `vercel-php` (voir `vercel.json` et `api/index.php`).
+Chaque push sur `main` redéploie automatiquement.
+
 ## Pages
 
 - `index.php` — accueil : ouverture avec portrait, bandeau des technologies, à propos, compétences, projets
